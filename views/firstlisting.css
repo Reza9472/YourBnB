@@ -1,0 +1,394 @@
+ /* //==============================================
+// Name:           Reza Poursafa
+// Student Number: 140640194
+// Email:          rpoursafa@myseneca.ca
+// Section:        NEE
+// Date:           11/10/2020
+//==============================================
+// Assignment:       1
+//==============================================  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Pacifico&display=swap');
+ 
+ * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: #222;
+    background-size: cover;
+    
+  }
+
+  header {
+    z-index: 4;
+    padding-bottom: 21px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    transition: .4.1s;
+    position: fixed;
+    
+  }
+  header:hover {
+    background: rgba(255,255,255,0.8);
+    color: #000000;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.05s;
+    transition-duration: 0.4s;
+  }
+  header h1 {
+    
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    letter-spacing: .5rem;
+    font-size: 2rem;
+    width: 100%;
+    
+  }
+  nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .navig {
+    
+    padding-left: 8vw;
+  }
+
+  nav i {
+    float: right;
+    margin-right: 7vw;
+  }
+
+  .loginBut {
+    float: right;
+    margin-right: 10px;
+    padding-bottom: 20px;
+  }
+
+/* 
+------------------------------------------------------------------------------ */
+
+.first_row {
+    top: 30vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    float: right;
+}
+
+.second_row {
+    top: 34vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    float: right;
+}
+
+img {
+    height: 200px;
+    width: 300px;
+    margin: 20px;
+    
+}
+
+.features {
+    margin-left: 20px;
+    position: absolute;
+    top: 75vh;
+    float: left;
+    color: white;
+}
+
+.but button {
+    top: 130vh;
+    position: absolute;
+    left: 0;
+    border: none;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    outline: 0;
+    cursor: pointer;
+    width: 10%;
+    font-size: 18px;
+    margin: 30px;
+  }
+  
+  .but button:hover {
+    opacity: 0.7;
+  }
+
+.features i {
+    margin: 20px;
+}
+
+.owner {
+    position: relative;
+    top: 20vh;
+    width: 50%;
+    float: left;
+}
+
+.owner p {
+    color: white;
+    margin: 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 26px;
+}
+
+.owner img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.house_img {
+    
+    position: relative;
+    top: 20vh;
+    left: 10vw;
+    
+}
+
+.house_img img {
+    height: 300px;
+    width: 400px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+ /* register and login Forms */
+
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 40px;
+    height: 100%;
+    width: 70%;
+    overflow: auto;
+    margin-left: 15%;
+    margin-top: 15vh;
+    justify-content: center;
+    align-items: center;
+    
+   
+  }
+  .registerForm ,.loginForm , .BookNowForm {
+    background-color: #222;
+    border: 1px solid white;
+    padding: 50px;
+    border-radius: 40px;
+    color: white;
+  }
+  
+  .registerForm .loginForm , label {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .registerForm .loginForm .BookNowForm, input[type='text']{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin: 5px;
+  
+  }
+
+  .BookNowForm label {
+      width: 100%;
+  }
+
+  .BookNowForm input[type='date']{
+      width: 30%;
+      margin: 5px;
+      margin-right: 80px;
+  }
+
+  .BookNowForm input[type='email']{
+      width: 100%;
+      margin: 5px;
+  }
+
+  
+  
+  .registerForm .loginForm, input[type='password']{
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+    
+  }
+  
+  
+  .registerForm .loginForm, p {
+    color: white;
+  }
+  
+  .closing {
+    float: right;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .closing:hover {
+    cursor: pointer;
+  }
+  
+  .loginBut {
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+  }
+
+  /* confirm message */
+  /* --------------------------------------------------------------------------------------------------- */
+  #confirm {
+    background-color: #222;
+    border: 1px solid white;
+    padding: 50px;
+    border-radius: 40px;
+    color: white;
+    display: none;
+    height: 350px;
+  }
+
+  #confirm h1 {
+    text-align: center;
+  }
+
+  #confirm p {
+      text-align: center;
+      padding: 0 130px;
+      
+  }
+  
+  /* --------------------------------------------------------------------------------------------------- */
+  /* Promotion */
+
+
+  .promo button{
+    background-color: lightgreen;
+    height: 80px;
+    width: 80px;
+    border-radius: 30px;
+    position: absolute;
+    right: 10px;
+    top: 200px;
+    opacity: 0.6;
+    animation-name: promotion;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    color: white;
+    font-weight: bold;
+
+  }
+
+  @keyframes promotion {
+    0% {}
+
+    25% {background-color: lightskyblue;
+         transform: rotate(10deg);}
+    50% {background-color: lightgreen;
+        transform: rotate(-10deg);
+         }
+    75% {background-color: cyan;
+         transform: rotate(10deg);}
+    100% {background-color: lightseagreen;
+          transform: rotate(-10deg);}
+  }
+
+/* --------------------------------------------------------------------------------------------------- */
+/* Footer */
+
+
+
+.footer {
+    position: absolute;
+    margin-top: 120vh;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  
+  .footer_class {
+    display: block;
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+    padding: 10px;
+  }
+  
+  .footer_img {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 35%;
+    float: left;
+    height: 100%;
+    display: block;
+    
+  }
+  
+  .footer_img img {
+    border-radius: 100px;
+    height: 150px;
+    width: 150px;
+  }
+  
+  .footer_class .footer_columns {
+    float: left;
+    margin-right: 10px;
+    height: 20%;
+    width: calc(20% - 20px);
+  }
+  
+  .footer_class .footer_columns h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .footer_class .footer_columns a {
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 20px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+  }
+  
+  .footer_class .footer_columns li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0;
+  }
+  
+  @media (max-width: 1000px){
+    .footer .footer_class {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+  
+  .footer_columns li {
+    margin: 20px;
+  }
+

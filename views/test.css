@@ -1,0 +1,407 @@
+/* //==============================================
+// Name:           Reza Poursafa
+// Student Number: 140640194
+// Email:          rpoursafa@myseneca.ca
+// Section:        NEE
+// Date:           11/10/2020
+//==============================================
+// Assignment:       1
+//==============================================  */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap');
+
+
+  * {
+    box-sizing: border-box; 
+  }
+  body {
+    background: #222;
+    background-size: cover;
+    margin: 0;
+  }
+
+  video { 
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      
+  }
+  #welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  header {
+    z-index: 4;
+    padding-bottom: 21px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    transition: .4.1s;
+    position: fixed;
+    
+  }
+  header:hover {
+    background: rgba(255,255,255,0.8);
+    color: #000000;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.05s;
+    transition-duration: 0.4s;
+  }
+  header h1 {
+    
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    letter-spacing: .5rem;
+    font-size: 2rem;
+    width: 100%;
+    
+  }
+  nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .navig {
+    
+    padding-left: 8vw;
+  }
+
+  nav i {
+    float: right;
+    margin-right: 3vw;
+  }
+
+  .loginBut {
+    float: right;
+    margin-right: 10px;
+  }
+
+ 
+  #welcome h2 { 
+    font-size: 8vmin;
+    margin: 2rem 3rem 0;
+    text-align: center;
+    font-weight: 100;
+    color: #fff;
+    mix-blend-mode: overlay;
+    font-family: Century Schoolbook, Century Schoolbook L, Georgia, serif;
+  }
+
+  /* ----------------------------------------------------------------------------------------------- */
+
+  .options {
+    position: relative;
+    top: 90vh;
+    right: 6vw;
+    float: right;
+  }
+
+  .options img {
+    margin: 30px;
+    height: 300px;
+    width: 400px;
+    border-radius: 50px;
+  }
+
+  .options img:hover {
+    opacity: 0.5;
+    transition-delay: 0.09s;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .options h1 {
+    color: white;
+    font-family: 'Arbutus Slab', serif;
+    text-align: center;
+    
+  }
+  
+
+  .options .cot {
+    color: white;
+    position: absolute;
+    z-index: 5;
+    top: 32vh;
+    left: 15vw;
+  }
+
+  .options .hous {
+    color: white;
+    position: absolute;
+    z-index: 5;
+    top: 32vh;
+    left: 46vw;
+  }
+
+
+  /* -------------------------------------------------------------------------------------------- */
+  /* Search Form */
+
+  .searchForm {
+    position: relative;
+    top: 137vh;
+    width: 20vw;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 10px;
+    margin-left: 20px;
+    
+}
+
+label {
+
+  width: 100%;
+  margin: 30px;
+  color: white;
+}
+
+.searchForm input[type='text'] {
+    margin: 10px;
+    width: 90%;
+    height: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.searchForm input[type='number'] {
+    margin: 10px;
+    width: 50%;
+    height: 20px;
+    border-radius: 20px;
+    text-align: center;
+    
+}
+
+.searchForm button[type='submit'] {
+   
+    background-color: #55d6aa;
+    color: black;
+    border-radius: 30px;
+    height: 30px;
+    width: 70px;
+
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+
+.informational_section {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    z-index: 0;
+    top: 100%;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .informational_section2 {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    z-index: 0;
+    top: 150%;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+
+  .left {
+    left: 0;
+    
+  }
+  
+ 
+  .right {
+    right: 0;
+    
+  }
+  
+  
+  .info_part {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .info_part h2 {
+    color: white;
+    font-family: 'Prompt', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .info_part p {
+    color: white;
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+  }
+  
+ 
+  .info_part img {
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    
+  }
+ 
+  /* ---------------------------------------------------------------------------------------------------- */
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 40px;
+    height: 100%;
+    width: 70%;
+    overflow: auto;
+    margin-left: 15%;
+    margin-top: 15vh;
+    justify-content: center;
+    align-items: center;
+    
+   
+  }
+
+  .modal h1 {
+    color: white;
+  }
+  .registerForm ,.loginForm {
+    background-color: #222;
+    border: 1px solid white;
+    padding: 50px;
+    border-radius: 40px;
+  }
+  
+  .registerForm .loginForm, label {
+    width: 100%;
+  }
+
+  .registerForm .loginForm, input[type='text']{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin: 5px;
+
+  }
+
+  .registerForm .loginForm, input[type='password']{
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+    
+  }
+
+  .registerForm .loginForm ,label {
+    margin-left: 0;
+  }
+
+  .registerForm .loginForm, p {
+    color: white;
+  }
+
+  .closing {
+    float: right;
+    color: white;
+    font-size: 20px;
+  }
+
+  .closing:hover {
+    cursor: pointer;
+  }
+/* 
+  ------------------------------------------------------------------------------- */
+
+  .footer {
+    position: absolute;
+    margin-top: 170vh;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+  .footer_class {
+    display: block;
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .footer_img {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 35%;
+    float: left;
+    height: 100%;
+    display: block;
+    
+  }
+
+  .footer_img img {
+    border-radius: 100px;
+    height: 150px;
+    width: 150px;
+  }
+
+  .footer_class .footer_columns {
+    float: left;
+    margin-right: 10px;
+    height: 20%;
+    width: calc(20% - 20px);
+  }
+
+  .footer_class .footer_columns h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .footer_class .footer_columns a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    font-weight: 20px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+  }
+
+  .footer_class .footer_columns li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 0;
+  }
+
+  @media (max-width: 1000px){
+    .footer .footer_class {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+
+  .footer_columns li {
+    margin: 20px;
+  }
