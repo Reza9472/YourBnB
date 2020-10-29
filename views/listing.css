@@ -188,6 +188,7 @@ nav i {
 
 
 /* ----------------------------------------------------------------------------------------------- */
+/* Search Form */
 
 .searchForm {
   
@@ -401,3 +402,130 @@ padding: 0;
 .footer_columns li {
 margin: 20px;
 }
+
+/* -------------------------------------------------------------------- */
+
+
+@media screen and (max-width: 1050px){
+
+    .addListing {
+        border-radius: 10px;
+        height: 90px;
+        width: 11%;
+    }
+
+    .addListing h1 {
+        left: 12vw;
+    }
+
+    .searchForm{
+        padding-left: 30px;
+    }
+
+    .searchForm label {
+        width: 100%;
+    }
+    .searchForm input[type='text']{
+        width: 96%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .footer {
+      
+      top: 450vh;
+    }
+
+    .footer .footer_class {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .footer .footer_class a {
+      font-size: 13px;
+    }
+
+    .footer .footer_class h1 {
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    .footer_img img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .footer_class .footer_columns li {
+      margin: 0;
+      padding: 5px;
+    }
+  }
+
+  /* @media screen and (min-width: 400px) and (max-width: 450px){
+    .footer {
+      top: 320vh;
+      
+    }
+  } */
+
+  /* @media screen and (min-width: 350px) and (max-width: 400px){
+    .footer {
+      top: 340vh;
+    }
+  }
+
+  @media screen and (min-width: 300px) and (max-width: 350px){
+    .footer {
+      top: 375vh;
+    }
+  } */
+
+  @media screen and (max-height: 772px){
+    .footer {
+      top: 470vh;
+    }
+  }
+
+  @media screen and (min-height: 690px) and (max-height: 772px){
+    .footer {
+      top: 500vh;
+    }
+  }
+
+  @media screen and (min-height: 660px) and (max-height: 690px){
+    .footer {
+      top: 530vh;
+    }
+  }
+
+  @media screen and (min-height: 610px) and (max-height: 660px){
+    .footer {
+      top: 560vh;
+    }
+  }
+
+  @media screen and (min-height: 540px) and (max-height: 610px){
+    .footer {
+      top: 610vh;
+    }
+  }
+
+  @media screen and (min-height: 560px) and (max-height: 610px){
+    .footer {
+      top: 610vh;
+    }
+  }
+
+  @media screen and (min-height: 530px) and (max-height: 560px){
+    .footer {
+      top: 650vh;
+    }
+  }
+
+  @media screen and (min-height: 420px) and (max-height: 530px){
+    .footer {
+      top: 700vh;
+    }
+  }
+

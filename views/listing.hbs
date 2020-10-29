@@ -1,0 +1,281 @@
+<!-- //==============================================
+// Name:           Reza Poursafa
+// Student Number: 140640194
+// Email:          rpoursafa@myseneca.ca
+// Section:        NEE
+// Date:           11/10/2020
+//==============================================
+// Assignment:       1
+//============================================== -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourB&B</title>
+    <link rel="stylesheet" href="listing.css">
+    <script src="https://kit.fontawesome.com/8023ce706a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>YOURB&B</h1>
+      <nav>
+          <a href="/" class="navig">Home</a>
+          <a href="/listing" class="navig">Room Listings</a>
+          <a href="#" onclick="document.getElementById('theModalForm').style.display='block'" class="navig">User Registration</a>
+        <a href="#" class="loginBut" onclick="document.getElementById('theLoginForm').style.display='block'">Login</a>
+        <i class="fas fa-shopping-cart"></i>
+        
+      </nav>
+    </header>
+
+  
+    <!-- ------------------------------------------------------------------------------------------------------------------ -->
+
+    <!-- Search Form -->
+
+
+
+    <form action="" class="searchForm">
+
+        <label for="bookingplace">Location</label>
+            <input type="text" autocomplete="off" name="bookingplace" placeholder="Anywhere" value="">
+            
+            <label for="checkInDate">Check In</label>
+            <input type="text" name="checkInDate" placeholder="dd-mm-yyyy" value="">
+            
+            <label for="checkOutDate">Check Out</label>
+            <input type="text" name="checkOutDate" placeholder="dd-mm-yyyy" value="">
+            
+            <label for="Guests">GUESTS</label>
+            <input type="number"></button>
+            
+            <button type="submit">Search</button>
+        </form>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------ -->
+    <!-- Add Listing -->
+
+    <div class="addListing">
+        
+        <a href="#" onclick="document.getElementById('AddListingForm').style.display='block'"><i class="fas fa-plus-square fa-2x"></i></a>
+        <h1>Add Listing</h1>
+    </div>
+
+
+    <!-- Listing Form -->
+    <div class="modal" id="AddListingForm">
+        <form action="/s">
+           <div class="listingForm">
+               <span class="closing" onclick="document.getElementById('AddListingForm').style.display='none';">&otimes;</span>
+               <h1>Let's get started listing your place!</h1>
+   
+               <label for="title">Listing Title</label><br>
+               <input type="text" placeholder="Enter the header for your listing" name="titlle"><br>
+
+               <label for="funame">Full Name</label><br>
+               <input type="text" placeholder="Enter Your Full Name" name="funame"><br>
+
+               <label for="num">Phone Number</label>
+               <input type="tel" placeholder="Enter Your Phone Number" name="num" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+               <label for="Guests" style="left: 10vw; position: relative;">Maximum number of guests?</label>
+               <input type="number" style="position: relative; left: 10vw;"></button><br><br>
+
+               <label for="loc">Location</label><br>
+               <input type="text" placeholder="Enter the location of your property" name="loc"><br>
+
+
+
+               <label for="msg">Type a message for your guests!</label><br>
+               <input type="text" placeholder="Enter your message" name="msg" style="height: 100px; text-align: initial;"><br>
+
+               <label for="listimg" >Upload Your Images</label><br><br>
+               <input type="file" name="listimg"><br>
+
+
+   
+               
+                <input type="submit" style="margin-top: 20px;">
+               
+   
+   
+           </div>
+       </form>
+    </div>
+
+
+    <!-- ------------------------------------------------------------------------------------------------------------------ -->
+    <!-- listings -->
+    <div class="listing_block">
+
+        <div class="card">
+            <img src="images/roberto-nickson-bwIqQ5qQhXs-unsplash.jpg"  style="width:100%">
+            <h1>Entire Cottage</h1>
+            <p class="price">$180</p>
+            <p>Our cottage is geared for families looking to get away and enjoy their time outside the city.</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+
+
+
+        <div class="card">
+            <img src="images/ashley-byrd-yzkTCP4uc9E-unsplash.jpg"  style="width:100%">
+            <h1>Full Cozy House</h1>
+            <p class="price">$250</p>
+            <p>Bright and modern loft with 1100 square feet of space for you and your family to enjoy your time </p>
+            <p><button>Add to Cart</button></p>
+        </div>
+
+
+
+        <div class="card">
+            <img src="images/francesca-tosolini-tHkJAMcO3QE-unsplash.jpg"  style="width:100%">
+            <h1>Stunning Loft</h1>
+            <p class="price">$240</p>
+            <p>Perfect for couples and families featuring outdoor BBQ with seating and stunning view</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+
+
+
+        <div class="card">
+            <img src="images/fran-hogan-BDRzsymkZho-unsplash.jpg" style="width:100%">
+            <h1>Private Room in House</h1>
+            <p class="price">$80</p>
+            <p>Private room in house hosted by me. Perfect for short-term visits. Fully furnished, free wifi and very comfortable</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+
+
+
+        <div class="card">
+            <img src="images/fran-hogan-M8fLGq2SBsY-unsplash.jpg"  style="width:100%">
+            <h1>Great Cottage next to Lake</h1>
+            <p class="price">$135</p>
+            <p>This cottage is great for families that want to enjoy the view of the Ontario lake.</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+
+
+        <div class="card">
+            <a href="firstListing"><img src="images/listing1.jpg"  style="width:100%"></a>
+            <a href="firstListing"><h1>Super Lux House in nature</h1></a>
+            <p class="price">$120</p>
+            <p>Deluxe house surrounded by nature. Fantastic for a romantic getaway</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </div>
+    
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+   <!-- User Registration -->
+        
+        <div class="modal" id="theModalForm">
+            <form action="/test-form-process" method="POST" enctype="multipart/form-data">
+                
+                <div class="registerForm">
+                    <span class="closing" onclick="document.getElementById('theModalForm').style.display='none';">&otimes;</span>
+                    <h1>Sign Up</h1>
+                    
+            <label for="email">Email</label>
+            <input type="text" placeholder="Enter Your Email Address" name="email" id="email" required>
+            
+            <label for="fname">First Name</label>
+            <input type="text" placeholder="Enter Your First Name" name="fname" id="fname" required>
+            
+            <label for="lname">Last Name</label>
+            <input type="text" placeholder="Enter Your Last Name" name="lname" id="lname" required>
+            
+            
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter Your Password" name="password" id="psw" minlength="8" required>
+            
+            <h3 id="ermsg" style="display: none;">Password must be more than 8 characters</h3>
+            
+            
+            <label for="birthday">Birthday</label>
+            <p>To sign up, you need to be at least 18. Other people who use Yourbnb won't see your birthday.</p>
+
+            <input type="date" name="birthday" required>
+            
+            <br><label for="photo" style="margin-top: 10px;">Profile Image</label>
+            <input type="file" name="photo" style="width: 100%; margin: 10px 0 10px 0;">
+            
+            <p>We'll send you marketing promotions, special offers, inspiration, and policy updates via email</p>
+            
+            
+            <input type="submit">
+        </div>
+    </form>
+</div>
+
+ <!-- ---------------------------------------------------------------------------------------------------- -->
+
+ <!-- Login Form -->
+
+ <div class="modal" id="theLoginForm">
+     <form action="/s">
+        <div class="loginForm">
+            <span class="closing" onclick="document.getElementById('theLoginForm').style.display='none';">&otimes;</span>
+            <h1>Login</h1>
+
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter Your Username" name="username" required>
+            
+            <label for="passw">Password</label>
+            <input type="password" placeholder="Enter Your Password" name="passw" required>
+            
+            <!-- <button type="button" style="margin: 10px;">Login</button> -->
+            <input type="submit" style="margin: 10px;" value="Login">
+            
+        </div>
+    </form>
+</div>   
+
+
+<!---------------------------------------------------------------------------- -->
+
+<!-- Footer -->
+
+<div class="footer">
+    <div class="footer_class">
+
+        <div class="footer_img">
+            
+            <img src="images/Free_Sample_By_Wix.jpg" alt="">
+        </div>
+    
+        <div class="footer_columns">
+            <h1>Policies</h1>
+            <a href=""> Terms &amp; Conditions</a>
+            <a href=""> Privacy Policy</a>
+        </div>
+        
+        <div class="footer_columns">
+            <h1>Links</h1>
+            <a href="">Room Listings</a>
+            <a href="">Join Us!</a>
+        </div>
+        
+        <div class="footer_columns">
+            <h1>Follow Us</h1>
+            <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+        </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

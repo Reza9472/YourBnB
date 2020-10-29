@@ -1,0 +1,238 @@
+<!-- //==============================================
+// Name:           Reza Poursafa
+// Student Number: 140640194
+// Email:          rpoursafa@myseneca.ca
+// Section:        NEE
+// Date:           11/10/2020
+//==============================================
+// Assignment:       1
+//============================================== -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8023ce706a.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="test.css">
+    <script src="/views/jsfunctions.js"></script>
+    <title>YourB&B</title>
+</head>
+<body>
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+    <!-- Full screen Video -->
+
+        <video playsinline autoplay loop>
+            <source src="videos/New video.mp4" type="video/mp4">
+        </video>
+
+        <header>
+          <h1>YOURB&B</h1>
+          <nav class="navbar navbar-expand-lg fixed-top">
+              <a href="/" class="navig">Home</a>
+              <a href="/listing" class="navig">Room Listings</a>
+              <a href="#" onclick="document.getElementById('theModalForm').style.display='block'" class="navig">User Registration</a>
+              <a href="#" class="loginBut" onclick="document.getElementById('theLoginForm').style.display='block'">Login</a>
+              <i class="fas fa-shopping-cart"></i>
+          </nav>
+        </header>
+        <div id="welcome">
+            <h2>Say Hello to your new home!</h2>
+        </div>
+        
+        
+        
+        
+        <!-- ---------------------------------------------------------------------------->
+        <!-- Information section -->
+        
+        
+        <div class="informational_section left">
+            <div class="info_part">
+                <h2>Love Your Stay!</h2>
+                <p>We take pride in having one of the best temporary housing services in Ontario. Don't just take our word for it! Come see for yourself!</p>
+            </div>
+        </div>
+        
+        <div class="informational_section right">
+        <div class="info_part">
+            
+            <img src="images/key-pic.jpg" alt="">
+           
+        </div>
+    </div>
+
+    
+    <div class="informational_section2 left">
+        <div class="info_part">
+
+            <img src="images/house5.jpg" alt="">
+        </div>
+    </div>
+    
+    <div class="informational_section2 right">
+        <div class="info_part">
+            
+            <p> Find your favorite place to stay! We have a whole range of houses and cottages ready for you.
+                As part of our policy to help protect our community, The hosts are required to sanitize their places
+                after every visit and hand sanitizers must be available for the guests convenience. </p>
+           
+        </div>
+    </div>
+
+    
+    <div class="listings">
+        
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+    <!-- search form -->
+    <form action="/" class="searchForm">
+
+        <label for="bookingplace">Location</label>
+            <input type="text" autocomplete="off" name="bookingplace" placeholder="Anywhere" value="">
+            
+            <label for="checkInDate">Check In</label>
+            <input type="text" name="checkInDate" placeholder="dd-mm-yyyy" value="">
+            
+            <label for="checkOutDate">Check Out</label>
+            <input type="text" name="checkOutDate" placeholder="dd-mm-yyyy" value="">
+            
+            <label for="Guests">GUESTS</label>
+            <input type="number"></button>
+            
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- ---------------------------------------------------------------------------------------------------- -->
+        
+        <!-- Guest Options -->
+        <div class="options">
+
+            <h1>Choose Your Desired Place!</h1>
+            <a href="listing.html"><img src="images/cottage.jpg" alt="img"></a>
+            <h2 class="cot">Cottage</h2>
+            <a href="listing.html"><img src="images/pexels-curtis-adams-3935316.jpg" alt="img"></a>
+            <h2 class="hous">Full Houses</h2>
+        </div>
+
+
+
+
+
+
+        
+        <!-- ---------------------------------------------------------------------------------------------------- -->
+        
+        <!-- User Registration -->
+        
+        <div class="modal" id="theModalForm">
+            <form action="/test-form-process" method="POST" enctype="multipart/form-data">
+                
+                <div class="registerForm">
+                    <span class="closing" onclick="document.getElementById('theModalForm').style.display='none';">&otimes;</span>
+                    <h1>Sign Up</h1>
+                    
+            <label for="email">Email</label>
+            <input type="text" placeholder="Enter Your Email Address" name="email" id="email" required>
+            
+            <label for="fname">First Name</label>
+            <input type="text" placeholder="Enter Your First Name" name="fname" id="fname" required>
+            
+            <label for="lname">Last Name</label>
+            <input type="text" placeholder="Enter Your Last Name" name="lname" id="lname" required>
+            
+            
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter Your Password" name="password" id="psw" minlength="8" required>
+            
+            <h3 id="ermsg" style="display: none;">Password must be more than 8 characters</h3>
+            
+            
+            <label for="birthday">Birthday</label>
+            <p>To sign up, you need to be at least 18. Other people who use Yourbnb won't see your birthday.</p>
+
+            <input type="date" name="birthday" required>
+            
+            <br><label for="photo" style="margin-top: 10px;">Profile Image</label>
+            <input type="file" name="photo" style="width: 100%; margin: 10px 0 10px 0;">
+            
+            <p>We'll send you marketing promotions, special offers, inspiration, and policy updates via email</p>
+            
+            
+            <input type="submit">
+        </div>
+    </form>
+</div>
+
+ <!-- ---------------------------------------------------------------------------------------------------- -->
+ 
+ <!-- Login Form -->
+ 
+ <div class="modal" id="theLoginForm">
+     <form action="/s">
+        <div class="loginForm">
+            <span class="closing" onclick="document.getElementById('theLoginForm').style.display='none';">&otimes;</span>
+            <h1>Login</h1>
+
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter Your Username" name="username" required>
+            
+            <label for="passw">Password</label>
+            <input type="password" placeholder="Enter Your Password" name="passw" required>
+            
+            <!-- <button type="button" style="margin: 10px;">Login</button> -->
+            <input type="submit" style="margin: 10px;" value="Login">
+            
+        </div>
+    </form>
+</div>   
+ 
+<!---------------------------------------------------------------------------- -->
+
+<!-- Footer -->
+
+<div class="footer">
+    <div class="footer_class">
+
+        <div class="footer_img">
+            
+            <img src="images/Free_Sample_By_Wix.jpg" alt="">
+        </div>
+    
+        <div class="footer_columns">
+            <h1>Policies</h1>
+            <a href=""> Terms &amp; Conditions</a>
+            <a href=""> Privacy Policy</a>
+        </div>
+        
+        <div class="footer_columns">
+            <h1>Links</h1>
+            <a href="">Room Listings</a>
+            <a href="">Join Us!</a>
+        </div>
+        
+        <div class="footer_columns">
+            <h1>Follow Us</h1>
+            <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </li>
+        </div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

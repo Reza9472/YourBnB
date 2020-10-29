@@ -95,6 +95,8 @@
     font-family: Century Schoolbook, Century Schoolbook L, Georgia, serif;
   }
 
+  
+
   /* ----------------------------------------------------------------------------------------------- */
 
   .options {
@@ -105,6 +107,7 @@
   }
 
   .options img {
+    position: relative;
     margin: 30px;
     height: 300px;
     width: 400px;
@@ -132,6 +135,8 @@
     z-index: 5;
     top: 32vh;
     left: 15vw;
+    
+
   }
 
   .options .hous {
@@ -166,7 +171,7 @@ label {
 
 .searchForm input[type='text'] {
     margin: 10px;
-    width: 90%;
+    width: 95%;
     height: 20px;
     border-radius: 20px;
     text-align: center;
@@ -204,6 +209,7 @@ label {
     top: 100%;
     overflow-x: hidden;
     padding-top: 20px;
+    
   }
   
   .informational_section2 {
@@ -235,6 +241,7 @@ label {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    
   }
 
   .info_part h2 {
@@ -248,6 +255,7 @@ label {
     color: white;
     font-family: 'Prompt', sans-serif;
     font-size: 20px;
+    
   }
   
  
@@ -257,8 +265,63 @@ label {
     border-radius: 20px;
     
   }
+
+  @media screen and (max-width: 1200px){
+    .informational_section , .informational_section2 , .info_part {
+      width: 100%;
+      
+    }
+
+    .info_part p {
+      
+      bottom: 30px;
+      margin-top: 100px;
+    }
+
+    .info_part img {
+      opacity: 0.5;
+      width: 100%;
+      border-radius: 15px;
+      
+    }
+
+    .searchForm {
+      width: 90%;
+    }
+
+    .options {
+      top: 150vh;
+      width: 90%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    .options img {
+      width: 97%;
+      
+      /* margin-left: 5rem;
+      margin-right: 3rem; */
+
+    }
+
+    .options .cot {
+      margin-left: 25vw;
+    }
+
+    .options .hous {
+      top: 75vh;
+      margin-right: 30vw;
+    }
+    
+
+   
+  }
  
   /* ---------------------------------------------------------------------------------------------------- */
+
+  /* Login and Register Forms */
 
   .modal {
     display: none;
@@ -324,6 +387,8 @@ label {
   .closing:hover {
     cursor: pointer;
   }
+
+  
 /* 
   ------------------------------------------------------------------------------- */
 
@@ -394,14 +459,84 @@ label {
     font-size: 20px;
     padding: 0;
   }
+ 
+  
+  @media screen and (max-width: 1000px){
 
-  @media (max-width: 1000px){
+    .footer {
+      
+      top: 230vh;
+    }
+
     .footer .footer_class {
       width: 100%;
       margin-bottom: 50px;
     }
+
+    .footer .footer_class a {
+      font-size: 13px;
+    }
+
+    .footer .footer_class h1 {
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    .footer_img img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .footer_class .footer_columns li {
+      margin: 0;
+      padding: 5px;
+    }
   }
+
+  /* @media screen and (min-width: 300px) and (max-width: 400px){
+    .footer {
+      top: 290vh;
+      right: 50px;
+    }
+  } */
+
 
   .footer_columns li {
     margin: 20px;
   }
+
+  .info_part p {
+      font-size: 14px;
+  }
+
+  @media screen and (max-height: 700px){
+    .footer {
+      top: 230vh;
+    }
+  }
+
+  @media screen and (min-height: 640px) and (max-height: 700px){
+    .footer {
+      top: 240vh;
+    }
+  }
+
+  @media screen and (min-height: 530px) and (max-height: 640px){
+    .footer {
+      top: 270vh;
+    }
+  }
+
+  @media screen and (min-height: 400px) and (max-height: 530px){
+    .footer {
+      top: 300vh;
+    }
+  }
+
+  @media screen and (min-height: 300px) and (max-height: 400px){
+    .footer {
+      top: 330vh;
+    }
+  }
+
+  
