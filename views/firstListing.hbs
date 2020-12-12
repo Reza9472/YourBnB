@@ -14,8 +14,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YourB&B</title>
+    <script>
+        function CalcDays(){
+        var inDate = new Date(document.getElementById("indate").value);
+        var outDate = new Date(document.getElementById("outdate").value);
+        return parseInt((outDate - inDate) / (24 * 3600 * 1000));
+    }
+
+    function calculate(){
+
+        if(document.getElementById("outdate")){
+            //document.getElementById("numdays").value = CalcDays();
+            document.getElementById("calinfo").innerHTML = "You are staying for " + CalcDays() + " Days!";
+            document.getElementById("accomods").innerHTML = "Accomodations: " + (CalcDays() * 156) + " CAD";
+            document.getElementById("cfee").innerHTML = "Cleaning Fee:  " + Math.round((CalcDays() * 2.2)) + " CAD";
+            document.getElementById("servfee").innerHTML = "Service Fee: " + (CalcDays() * 2) + " CAD";
+            document.getElementById("totalc").innerHTML = "Total Cost: " + ((CalcDays() * 156) + Math.round((CalcDays() * 2.2)) + (CalcDays() * 2)) + " CAD";
+        }
+    }
+    </script>
     <link rel="stylesheet" href="firstlisting.css">
     <script src="https://kit.fontawesome.com/8023ce706a.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <header>
@@ -24,7 +44,11 @@
           <a href="/" class="navig">Home</a>
           <a href="/listing" class="navig">Room Listings</a>
           <a href="#" onclick="document.getElementById('theModalForm').style.display='block'" class="navig">User Registration</a>
-          <a href="#" class="loginBut" onclick="document.getElementById('theLoginForm').style.display='block'">Login</a>
+          {{#if user}}
+                <a href="/loginPage"><i class="fas fa-user-circle"></i></a>
+            {{else}}    
+            <a href="login" class="loginBut">Login</a>
+            {{/if}}
           <i class="fas fa-shopping-cart"></i>
         
       </nav>
@@ -84,6 +108,7 @@
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- Booking Form -->
     <p class="but"><button onclick="document.getElementById('theBookNowForm').style.display='block';">Book Now!</button></p>
+    <h2 class="pricepernight">156 CAD / Night</h2>
     <h2 class="promo"><button >Get 50% Off!</button></h2>
 
     <!-- ---------------------------------------------------------------------------------------------------- -->
@@ -91,25 +116,32 @@
     <!-- Book Now Form -->
 
     <div class="modal" id="theBookNowForm">
-        <form action="/s">
+        <form action="/confirm" method="POST">
            <div class="BookNowForm">
                <span class="closing" onclick="document.getElementById('theBookNowForm').style.display='none';">&otimes;</span>
                <h1>Please Enter Your Information Below</h1>
    
-               <label for="username">Full Name</label>
-               <input type="text" placeholder="Enter Your Full Name" name="username">
+               <label for="fullname">Full Name</label>
+               <input type="text" placeholder="Enter Your Full Name" name="fullname" id="fullname">
 
-               <label for="mail">Email</label>
-               <input type="email" placeholder="Enter Your Email Address" name="mail">
+               <label for="email">Email</label>
+               <input type="email" placeholder="Enter Your Email Address" name="email" id="email">
    
-               <label for="checkInDate">Check In</label>
-               <input type="date" name="checkInDate" placeholder="dd-mm-yyyy" value="">
+               <label for="indate">Check In</label>
+               <input type="date" name="indate" placeholder="dd-mm-yyyy" id="indate" onchange="calculate()">
             
-               <label for="checkOutDate">Check Out</label>
-               <input type="date" name="checkOutDate" placeholder="dd-mm-yyyy" value="">
-   
-               <button class="booknowBut" type="button" style="margin: 10px;" onclick="document.getElementById('confirm').style.display = 'block';
-               document.getElementById('theBookNowForm').style.display='none';">Book Now!</button>
+               <label for="outdate">Check Out</label>
+               <input type="date" name="outdate" placeholder="dd-mm-yyyy" id="outdate" onchange="calculate()">
+
+               <!-- <label for="txt">Number of Days: </label>
+               <input type="text" id="numdays" name="txt"> -->
+
+               <p id="calinfo"></p>
+                <p id="accomods"></p>
+                <p id="cfee"></p>
+                <p id="servfee"></p>
+                <p id="totalc"></p>
+               <button class="booknowBut" id="booksub" type="submit" style="margin: 10px;">Book Now!</button>
    
    
            </div>
@@ -140,43 +172,46 @@
     <!-- User Registration -->
         
         <div class="modal" id="theModalForm">
-            <form action="/test-form-process" method="POST" enctype="multipart/form-data">
-                
-                <div class="registerForm">
-                    <span class="closing" onclick="document.getElementById('theModalForm').style.display='none';">&otimes;</span>
-                    <h1>Sign Up</h1>
-                    
-            <label for="email">Email</label>
-            <input type="text" placeholder="Enter Your Email Address" name="email" id="email" required>
-            
-            <label for="fname">First Name</label>
-            <input type="text" placeholder="Enter Your First Name" name="fname" id="fname" required>
-            
-            <label for="lname">Last Name</label>
-            <input type="text" placeholder="Enter Your Last Name" name="lname" id="lname" required>
-            
-            
-            <label for="password">Password</label>
-            <input type="password" placeholder="Enter Your Password" name="password" id="psw" minlength="8" required>
-            
-            <h3 id="ermsg" style="display: none;">Password must be more than 8 characters</h3>
-            
-            
-            <label for="birthday">Birthday</label>
-            <p>To sign up, you need to be at least 18. Other people who use Yourbnb won't see your birthday.</p>
+                    <form action="/test-form-process" method="POST" enctype="multipart/form-data">
+                        
+                        <div class="registerForm">
+                            <span class="closing" onclick="document.getElementById('theModalForm').style.display='none';">&otimes;</span>
+                            <h1>Sign Up</h1>
 
-            <input type="date" name="birthday" required>
-            
-            <br><label for="photo" style="margin-top: 10px;">Profile Image</label>
-            <input type="file" name="photo" style="width: 100%; margin: 10px 0 10px 0;">
-            
-            <p>We'll send you marketing promotions, special offers, inspiration, and policy updates via email</p>
-            
-            
-            <input type="submit">
+                    <label for="username">User Name </label>
+                    <input type="text" placeholder="Enter Your User Name" name="username" id="userName" required>        
+                            
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="Enter Your Email Address" name="email" id="email" required>
+                    
+                    <label for="fname">First Name</label>
+                    <input type="text" placeholder="Enter Your First Name" name="fname" id="fname" required>
+                    
+                    <label for="lname">Last Name</label>
+                    <input type="text" placeholder="Enter Your Last Name" name="lname" id="lname" required>
+                    
+                    
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter Your Password" name="password" id="password" minlength="8" required>
+                    
+                    <h3 id="ermsg" style="display: none;">Password must be more than 8 characters</h3>
+                    
+                    
+                    <label for="birthday">Birthday</label>
+                    <p>To sign up, you need to be at least 18. Other people who use Yourbnb won't see your birthday.</p>
+
+                    <input type="date" name="birthday" required>
+                    
+                    <br><label for="photo" style="margin-top: 10px;">Profile Image</label>
+                    <input type="file" name="photo" style="width: 100%; margin: 10px 0 10px 0;">
+                    
+                    <p>We'll send you marketing promotions, special offers, inspiration, and policy updates via email</p>
+                    
+                    
+                    <input type="submit">
+                </div>
+            </form>
         </div>
-    </form>
-</div>
  <!-- ---------------------------------------------------------------------------------------------------- -->
 
  <!-- Login Form -->

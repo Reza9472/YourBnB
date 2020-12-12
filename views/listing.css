@@ -198,7 +198,7 @@ nav i {
   border: 2px solid #fff;
   border-radius: 30px;
   padding: 10px;
-  padding-left: 150px;
+  padding-left: 35%;
   margin-left: 20px;
   
   
@@ -212,7 +212,9 @@ margin-left: 40px;
 color: white;
 }
 
-.searchForm input[type='text'] {
+
+
+/* .searchForm input[type='text'] {
   margin: 10px;
   width: 10%;
   height: 20px;
@@ -239,7 +241,7 @@ color: white;
   height: 30px;
   width: 70px;
 
-}
+} */
 
 
 
@@ -283,6 +285,14 @@ display: inline-block;
 margin: 5px;
 
 }
+
+.registerForm .loginForm , input[type='number']{
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  margin: 5px;
+  
+  }
 
 .registerForm .loginForm , input[type='password']{
 width: 100%;

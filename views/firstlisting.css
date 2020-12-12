@@ -108,7 +108,7 @@ img {
 }
 
 .but button {
-   top: 130vh;
+   top: 150vh;
    position: absolute;
    left: 0;
    border: none;
@@ -272,6 +272,19 @@ img {
      padding: 0 130px;
      
  }
+
+ .pricepernight { 
+   color: white;
+   position: relative;
+   top: 90vh;
+   margin: 30px;
+  
+   max-width: 200px;
+   height: 50px;
+   padding: 10px;
+ }
+
+ 
  
  /* --------------------------------------------------------------------------------------------------- */
  /* Promotion */

@@ -18,7 +18,7 @@
     <script src="https://kit.fontawesome.com/8023ce706a.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="test.css">
-    <script src="/views/jsfunctions.js"></script>
+    <script src="../js/search.js"></script>
     <title>YourB&B</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
     <!-- ---------------------------------------------------------------------------------------------------- -->
     <!-- Full screen Video -->
 
-        <video playsinline autoplay loop>
+        <video playsinline autoplay loop muted>
             <source src="videos/New video.mp4" type="video/mp4">
         </video>
 
@@ -36,7 +36,11 @@
               <a href="/" class="navig">Home</a>
               <a href="/listing" class="navig">Room Listings</a>
               <a href="#" onclick="document.getElementById('theModalForm').style.display='block'" class="navig">User Registration</a>
-              <a href="#" class="loginBut" onclick="document.getElementById('theLoginForm').style.display='block'">Login</a>
+              {{#if user}}
+                <a href="/loginPage"><i class="fas fa-user-circle"></i></a>
+            {{else}}    
+            <a href="login" class="loginBut">Login</a>
+            {{/if}}
               <i class="fas fa-shopping-cart"></i>
           </nav>
         </header>
@@ -114,9 +118,9 @@
         <div class="options">
 
             <h1>Choose Your Desired Place!</h1>
-            <a href="listing.html"><img src="images/cottage.jpg" alt="img"></a>
+            <a href="listing"><img src="images/cottage.jpg" alt="img"></a>
             <h2 class="cot">Cottage</h2>
-            <a href="listing.html"><img src="images/pexels-curtis-adams-3935316.jpg" alt="img"></a>
+            <a href="listing"><img src="images/pexels-curtis-adams-3935316.jpg" alt="img"></a>
             <h2 class="hous">Full Houses</h2>
         </div>
 
@@ -131,67 +135,79 @@
         <!-- User Registration -->
         
         <div class="modal" id="theModalForm">
-            <form action="/test-form-process" method="POST" enctype="multipart/form-data">
-                
-                <div class="registerForm">
-                    <span class="closing" onclick="document.getElementById('theModalForm').style.display='none';">&otimes;</span>
-                    <h1>Sign Up</h1>
-                    
-            <label for="email">Email</label>
-            <input type="text" placeholder="Enter Your Email Address" name="email" id="email" required>
-            
-            <label for="fname">First Name</label>
-            <input type="text" placeholder="Enter Your First Name" name="fname" id="fname" required>
-            
-            <label for="lname">Last Name</label>
-            <input type="text" placeholder="Enter Your Last Name" name="lname" id="lname" required>
-            
-            
-            <label for="password">Password</label>
-            <input type="password" placeholder="Enter Your Password" name="password" id="psw" minlength="8" required>
-            
-            <h3 id="ermsg" style="display: none;">Password must be more than 8 characters</h3>
-            
-            
-            <label for="birthday">Birthday</label>
-            <p>To sign up, you need to be at least 18. Other people who use Yourbnb won't see your birthday.</p>
+                    <form action="/test-form-process" method="POST" enctype="multipart/form-data">
+                        
+                        <div class="registerForm">
+                            <span class="closing" onclick="document.getElementById('theModalForm').style.display='none';">&otimes;</span>
+                            <h1>Sign Up</h1>
 
-            <input type="date" name="birthday" required>
-            
-            <br><label for="photo" style="margin-top: 10px;">Profile Image</label>
-            <input type="file" name="photo" style="width: 100%; margin: 10px 0 10px 0;">
-            
-            <p>We'll send you marketing promotions, special offers, inspiration, and policy updates via email</p>
-            
-            
-            <input type="submit">
+                    <label for="username">User Name </label>
+                    <input type="text" placeholder="Enter Your User Name" name="username" id="userName" required>        
+                            
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="Enter Your Email Address" name="email" id="email" required>
+                    
+                    <label for="fname">First Name</label>
+                    <input type="text" placeholder="Enter Your First Name" name="fname" id="fname" required>
+                    
+                    <label for="lname">Last Name</label>
+                    <input type="text" placeholder="Enter Your Last Name" name="lname" id="lname" required>
+                    
+                    
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter Your Password" name="password" id="password" minlength="8" required>
+                    
+                    <h3 id="ermsg" style="display: none;">Password must be more than 8 characters</h3>
+                    
+                    
+                    <label for="birthday">Birthday</label>
+                    <p>To sign up, you need to be at least 18. Other people who use Yourbnb won't see your birthday.</p>
+
+                    <input type="date" name="birthday" required>
+                    
+                    <br><label for="photo" style="margin-top: 10px;">Profile Image</label>
+                    <input type="file" name="photo" style="width: 100%; margin: 10px 0 10px 0;">
+                    
+                    <p>We'll send you marketing promotions, special offers, inspiration, and policy updates via email</p>
+                    
+                    
+                    <input type="submit">
+                </div>
+            </form>
         </div>
-    </form>
-</div>
 
  <!-- ---------------------------------------------------------------------------------------------------- -->
  
- <!-- Login Form -->
+ {{!-- <!-- Login Form -->
  
  <div class="modal" id="theLoginForm">
-     <form action="/s">
+     <form method="POST" action="/login">
         <div class="loginForm">
             <span class="closing" onclick="document.getElementById('theLoginForm').style.display='none';">&otimes;</span>
-            <h1>Login</h1>
+            
 
+            {{#if errorMsg}}
+                <h5>{{errorMsg}}</h5>
+            {{else}}
+            <h1>Login</h1>
+            {{/if}}
+
+            {{#if user}}
+                <p>You are already logged in!</p>
+            {{else}}        
             <label for="username">Username</label>
             <input type="text" placeholder="Enter Your Username" name="username" required>
             
-            <label for="passw">Password</label>
-            <input type="password" placeholder="Enter Your Password" name="passw" required>
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter Your Password" name="password" required>
             
             <!-- <button type="button" style="margin: 10px;">Login</button> -->
             <input type="submit" style="margin: 10px;" value="Login">
-            
+            {{/if}}
         </div>
     </form>
 </div>   
- 
+  --}}
 <!---------------------------------------------------------------------------- -->
 
 <!-- Footer -->

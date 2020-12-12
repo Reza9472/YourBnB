@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap');
+
+
+  * {
+    box-sizing: border-box; 
+  }
+  body {
+    background: #222;
+    background-size: cover;
+    margin: 0;
+   
+  }
+
+ 
+  #welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  header {
+    z-index: 4;
+    padding-bottom: 21px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    transition: .4.1s;
+    position: fixed;
+    
+  }
+  header:hover {
+    background: rgba(255,255,255,0.8);
+    color: #000000;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.05s;
+    transition-duration: 0.4s;
+  }
+  header h1 {
+    
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    letter-spacing: .5rem;
+    font-size: 2rem;
+    width: 100%;
+    
+  }
+  nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .navig {
+    
+    padding-left: 8vw;
+  }
+
+  nav i {
+    float: right;
+    margin-right: 3vw;
+  }
+
+  .loginBut {
+    float: right;
+    margin-right: 10px;
+  }
+
+ 
+  .container {
+    
+    padding: 35vh 20vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container h1,h3 {
+    color: white;
+    font-family: 'Prompt', sans-serif;
+  }
+
+
+
+
+  /* ---------------------------------------------------------------------------------------------------- */
+
+  /* Login and Register Forms */
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 40px;
+    height: 100%;
+    width: 70%;
+    overflow: auto;
+    margin-left: 15%;
+    margin-top: 15vh;
+    justify-content: center;
+    align-items: center;
+    
+   
+  }
+
+  .modal h1 {
+    color: white;
+  }
+  .registerForm ,.loginForm {
+    background-color: #222;
+    border: 1px solid white;
+    padding: 50px;
+    border-radius: 40px;
+  }
+  
+  .registerForm .loginForm, label {
+    width: 100%;
+  }
+
+  .registerForm .loginForm, input[type='text']{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin: 5px;
+
+  }
+
+  .registerForm .loginForm, input[type='password']{
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+    
+  }
+
+  .registerForm .loginForm ,label {
+    margin-left: 0;
+  }
+
+  .registerForm .loginForm, p {
+    color: white;
+  }
+
+  .closing {
+    float: right;
+    color: white;
+    font-size: 20px;
+  }
+
+  .closing:hover {
+    cursor: pointer;
+  }
+
+  .bookinfo {
+      color: white;
+      padding: 35vh 20vw;
+    justify-content: center;
+    align-items: center;
+  }

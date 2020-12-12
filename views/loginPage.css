@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arbutus+Slab&display=swap');
+
+
+  * {
+    box-sizing: border-box; 
+  }
+  body {
+    background: #222;
+    background-size: cover;
+    margin: 0;
+   
+  }
+
+ 
+  #welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  header {
+    z-index: 4;
+    padding-bottom: 21px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    transition: .4.1s;
+    position: fixed;
+    
+  }
+  header:hover {
+    background: rgba(255,255,255,0.8);
+    color: #000000;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.05s;
+    transition-duration: 0.4s;
+  }
+  header h1 {
+    
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    letter-spacing: .5rem;
+    font-size: 2rem;
+    width: 100%;
+    
+  }
+  nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .navig {
+    
+    padding-left: 8vw;
+  }
+
+  nav i {
+    float: right;
+    margin-right: 3vw;
+  }
+
+  .loginBut {
+    float: right;
+    margin-right: 10px;
+  }
+
+
+  
+  /* ---------------------------------------------------------------------------------------------------- */
+
+  /* Login and Register Forms */
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 40px;
+    height: 100%;
+    width: 70%;
+    overflow: auto;
+    margin-left: 15%;
+    margin-top: 15vh;
+    justify-content: center;
+    align-items: center;
+    
+   
+  }
+
+  .modal h1 {
+    color: white;
+  }
+  .registerForm ,.loginForm {
+    background-color: #222;
+    border: 1px solid white;
+    padding: 50px;
+    border-radius: 40px;
+  }
+  
+  .registerForm .loginForm, label {
+    width: 100%;
+  }
+
+  .registerForm .loginForm, input[type='text']{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    margin: 5px;
+
+  }
+
+  .registerForm .loginForm, input[type='password']{
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+    
+  }
+
+  .registerForm .loginForm ,label {
+    margin-left: 0;
+  }
+
+  .registerForm .loginForm, p {
+    color: white;
+  }
+
+  .showInfo {
+    border: 1px solid white;
+    border-radius: 30px;
+    max-width: 300px;
+    position: relative;
+    top: 20vh;
+    left: 40%;
+    right: 40%;
+    color: white;
+    padding: 60px;
+    margin-bottom: 40px;
+  }
+  
+/* ------------------------------------------------------------------------------------------------------------ */
+/* card   */
+
+
+
+.card {
+
+  flex-direction: column;
+  box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: 55px;
+  text-align: center;
+  font-family: arial;
+  position: relative;
+  top: 25vh;
+  
+}
+
+.card h1 {
+  color: white;
+}
+
+.card p {
+  color: #ffffff;
+}
+
+.card a{
+  text-decoration: none;
+}
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.cartbuts  {
+  position: absolute;
+  right: 0;
+  border: none;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  outline: 0;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.listing_block {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#logoutbut {
+
+  color: white;
+  text-decoration: none;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  padding: 6px;
+}

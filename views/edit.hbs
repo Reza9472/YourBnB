@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8023ce706a.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    {{!-- <link rel="stylesheet" href="loginPage.css"> --}}
+    <link rel="stylesheet" href="edit.css">
+    <title>YourB&B</title>
+</head>
+<body>
+
+
+    <header>
+        <h1>YOURB&B</h1>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <a href="/" class="navig">Home</a>
+            <a href="listing" class="navig">Room Listings</a>
+            <a href="#" onclick="document.getElementById('theModalForm').style.display='block'" class="navig">User Registration</a>
+            {{#if user}}
+                <a href="/loginPage"><i class="fas fa-user-circle"></i></a>
+            {{else}}    
+            <a href="login" class="loginBut">Login</a>
+            {{/if}}
+            <i class="fas fa-shopping-cart"></i>
+            
+        </nav>
+    </header>
+
+
+    <div class="roomed" id="AddListingForm">
+        <form action="/Edit" method="POST">
+           <div class="listingForm">
+
+                {{#if house._id}}
+                    <input type="hidden" name="ID" value="{{house._id}}" />
+                    <input type="hidden" name="edit" value="1" />
+                    <h4>Editing Listing ID: {{house._id}}</h4>
+                {{else}}
+                    <input type="hidden" name="edit" value="0" />
+                    <label class="fixedlabel">ID</label><input type="number" name="ID" /><br/>
+                {{/if}}
+
+               <span class="closing" onclick="document.getElementById('AddListingForm').style.display='none';"></span>
+               <h1>Edit</h1>
+   
+               <label for="title">Listing Title</label><br>
+               <input type="text" placeholder="Enter the header for your listing" name="title"><br>
+
+               <label for="fullname">Full Name</label><br>
+               <input type="text" placeholder="Enter Your Full Name" name="fullname"><br>
+
+               <label for="price">Price</label>
+               <input type="number" placeholder="Enter the price per night" name="price" >
+
+               {{!-- <label for="Guests" style="left: 10vw; position: relative;">Maximum number of guests?</label>
+               <input type="number" style="position: relative; left: 10vw;"></button><br><br> --}}
+
+               <label for="location">Location</label><br>
+               <input type="text" placeholder="Enter the location of your property" name="location"><br>
+
+
+
+               <label for="description">Type a message for your guests!</label><br>
+               <input type="text" placeholder="Enter your message" name="description" style="height: 100px; text-align: initial;"><br>
+
+               <label for="photo" >Upload Your Images</label><br><br>
+               {{!-- <input type="file" name="photo"><br> --}}
+
+
+   
+               
+                <input type="submit" style="margin-top: 20px;">
+               
+   
+   
+           </div>
+       </form>
+    </div>
+
+
+
+
+
+    <!-- User Registration -->
+        
+        <div class="modal" id="theModalForm">
+                    <form action="/test-form-process" method="POST" enctype="multipart/form-data">
+                        
+                        <div class="registerForm">
+                            <span class="closing" onclick="document.getElementById('theModalForm').style.display='none';">&otimes;</span>
+                            <h1>Sign Up</h1>
+
+                    <label for="username">User Name </label>
+                    <input type="text" placeholder="Enter Your User Name" name="username" id="userName" required>        
+                            
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="Enter Your Email Address" name="email" id="email" required>
+                    
+                    <label for="fname">First Name</label>
+                    <input type="text" placeholder="Enter Your First Name" name="fname" id="fname" required>
+                    
+                    <label for="lname">Last Name</label>
+                    <input type="text" placeholder="Enter Your Last Name" name="lname" id="lname" required>
+                    
+                    
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter Your Password" name="password" id="password" minlength="8" required>
+                    
+                    <h3 id="ermsg" style="display: none;">Password must be more than 8 characters</h3>
+                    
+                    
+                    <label for="birthday">Birthday</label>
+                    <p>To sign up, you need to be at least 18. Other people who use Yourbnb won't see your birthday.</p>
+
+                    <input type="date" name="birthday" required>
+                    
+                    <br><label for="photo" style="margin-top: 10px;">Profile Image</label>
+                    <input type="file" name="photo" style="width: 100%; margin: 10px 0 10px 0;">
+                    
+                    <p>We'll send you marketing promotions, special offers, inspiration, and policy updates via email</p>
+                    
+                    
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+
+
+ <div class="modal" id="theLoginForm">
+     <form action="/s">
+        <div class="loginForm">
+            <span class="closing" onclick="document.getElementById('theLoginForm').style.display='none';">&otimes;</span>
+            <h1>Login</h1>
+
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter Your Username" name="username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter Your Password" name="password" required>
+            
+            <!-- <button type="button" style="margin: 10px;">Login</button> -->
+            <input type="submit" style="margin: 10px;" value="Login">
+            
+        </div>
+    </form>
+</div>   
+
+    
+      
+      
+</body>    
+</html>
